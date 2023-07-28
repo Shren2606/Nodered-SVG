@@ -1,0 +1,375 @@
+[
+    {
+        "id": "b44e44406c8eebab",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bdbb0488f963a2d0",
+        "type": "drawsvg-local",
+        "z": "b44e44406c8eebab",
+        "name": "",
+        "x": 1340,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bac39dd2b4e3ad4d",
+        "type": "range",
+        "z": "b44e44406c8eebab",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "0",
+        "maxout": "500",
+        "action": "clamp",
+        "round": false,
+        "property": "payload",
+        "name": "",
+        "x": 360,
+        "y": 340,
+        "wires": [
+            [
+                "54090ab29a53d4d2"
+            ]
+        ]
+    },
+    {
+        "id": "54090ab29a53d4d2",
+        "type": "function",
+        "z": "b44e44406c8eebab",
+        "name": "",
+        "func": "const msgInput = msg.payload; //input\n\nconst msgOutput = \n{ payload: \n    {\n    command:\"update_style\", // \"update_style\" means update CSS\n    selector:\"#tank2\", // id's string\n    attributeName:\"width\",// Width\n    attributeValue: msgInput    // parameter's new value\n    }\n};\n\nreturn msgOutput; //output",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 340,
+        "wires": [
+            [
+                "98d91dd3977103e9"
+            ]
+        ]
+    },
+    {
+        "id": "d460271430bf3027",
+        "type": "ui_slider",
+        "z": "b44e44406c8eebab",
+        "name": "",
+        "label": "change width",
+        "tooltip": "",
+        "group": "767738b45cde621a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 150,
+        "y": 340,
+        "wires": [
+            [
+                "bac39dd2b4e3ad4d"
+            ]
+        ]
+    },
+    {
+        "id": "98d91dd3977103e9",
+        "type": "ui_svg_graphics",
+        "z": "b44e44406c8eebab",
+        "group": "767738b45cde621a",
+        "order": 0,
+        "width": "14",
+        "height": "12",
+        "svgString": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"1230px\" height=\"830px\" viewBox=\"-1.0709730386734009 -0.9890803098678589 1232.1414794921875 831.9780883789062\" preserveAspectRatio=\"xMidYMid meet\"><defs id=\"svgEditorDefs\"><marker id=\"square10\" markerHeight=\"10\" markerUnits=\"strokeWidth\" markerWidth=\"10\" orient=\"auto\" refX=\"0\" refY=\"0\" viewBox=\"-5 -5 10 10\"><rect height=\"10\" style=\"fill:black;stroke:none;\" width=\"10\" x=\"-5\" y=\"-5\"/></marker><marker id=\"arrow15-12-right\" markerHeight=\"12\" markerUnits=\"strokeWidth\" markerWidth=\"15\" orient=\"auto\" refX=\"-3\" refY=\"0\" viewBox=\"-15 -5 20 20\"><path d=\"M -15 -5 L 0 0 L -15 5 z\" fill=\"black\" style=\"stroke:none;\"/></marker><style type=\"text/css\">.svg_a{fill:blue;cursor:pointer;}\n.svg_a:hover{text-decoration:underline;}\n\n</style><linearGradient gradientUnits=\"objectBoundingBox\" id=\"lgrd2-b\" spreadMethod=\"pad\" x1=\"0\" x2=\"100%\" y1=\"0\" y2=\"0\"><stop offset=\"0%\" stop-color=\"#BBC42A\"/><stop offset=\"100%\" stop-color=\"#ED6E46\"/></linearGradient></defs>\n  <rect id=\"svgEditorBackground\" x=\"0\" y=\"0\" width=\"1230\" height=\"830\" style=\"fill:none; stroke: none;\"/>\n  <g id=\"g_e3_svg\"/>\n  \n<rect x=\"208.627000\" y=\"202.482000\" style=\"stroke: none; stroke-width:1px;fill:dodgerblue;\" id=\"OnOff\" width=\"195.325000\" height=\"246.000000\"/><g id=\"g_e1_svg\"><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"98.2032\" height=\"47.4363\" viewBox=\"0 0 100 100\" preserveAspectRatio=\"xMidYMid meet\" id=\"e1_input_svg\" x=\"835.3723754882812\" y=\"489.3377685546875\"><desc>Copyright Opto 22</desc> </svg></g><a id=\"e1_hyperlink\" xlink:title=\"\" xlink:href=\"\" target=\"_blank\" class=\"svg_a\"/><rect x=\"523.59361596462\" y=\"183.630\" style=\"fill:deeppink;stroke:none;stroke-width:100px;\" id=\"tank2\" width=\"332.57171433691\" height=\"304.54600807257\" transform=\"matrix(-0.809271 0 0 -0.742155 1170.95 582.14)\"/></svg>",
+        "clickableShapes": [],
+        "javascriptHandlers": [],
+        "smilAnimations": [],
+        "bindings": [
+            {
+                "selector": "#relay220V_polygon",
+                "bindSource": "payload.relay220V.x",
+                "bindType": "attr",
+                "attribute": "x"
+            }
+        ],
+        "showCoordinates": false,
+        "autoFormatAfterEdit": false,
+        "showBrowserErrors": false,
+        "showBrowserEvents": false,
+        "enableJsDebugging": false,
+        "sendMsgWhenLoaded": false,
+        "noClickWhenDblClick": false,
+        "outputField": "payload",
+        "editorUrl": "http://127.0.0.1:1880/drawsvg_local/edrawsvg.html",
+        "directory": "",
+        "panning": "both",
+        "zooming": "disabled",
+        "panOnlyWhenZoomed": false,
+        "doubleClickZoomEnabled": false,
+        "mouseWheelZoomEnabled": false,
+        "dblClickZoomPercentage": "150",
+        "cssString": "div.ui-svg svg{\n    color: var(--nr-dashboard-widgetColor);\n    fill: currentColor !important;\n}\ndiv.ui-svg path {\n    fill: inherit;\n}",
+        "name": "SVG graphics (local)",
+        "x": 1020,
+        "y": 340,
+        "wires": [
+            [
+                "bdbb0488f963a2d0"
+            ]
+        ]
+    },
+    {
+        "id": "ccfd09739267dc95",
+        "type": "change",
+        "z": "b44e44406c8eebab",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"command\":\"update_style\",\"selector\":\"#OnOff\",\"attributeName\":\"fill-opacity\",\"attributeValue\":1}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 480,
+        "wires": [
+            [
+                "98d91dd3977103e9"
+            ]
+        ]
+    },
+    {
+        "id": "b16464043a39476b",
+        "type": "change",
+        "z": "b44e44406c8eebab",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"command\":\"update_style\",\"selector\":\"#OnOff\",\"attributeName\":\"fill-opacity\",\"attributeValue\":0}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 420,
+        "wires": [
+            [
+                "98d91dd3977103e9"
+            ]
+        ]
+    },
+    {
+        "id": "37fa8c0bd5d12970",
+        "type": "ui_button",
+        "z": "b44e44406c8eebab",
+        "name": "",
+        "group": "767738b45cde621a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Hide",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 250,
+        "y": 420,
+        "wires": [
+            [
+                "b16464043a39476b"
+            ]
+        ]
+    },
+    {
+        "id": "8b7f4316b2316318",
+        "type": "ui_button",
+        "z": "b44e44406c8eebab",
+        "name": "",
+        "group": "767738b45cde621a",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Unhide",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 280,
+        "y": 480,
+        "wires": [
+            [
+                "ccfd09739267dc95"
+            ]
+        ]
+    },
+    {
+        "id": "1181af16e96121a9",
+        "type": "ui_slider",
+        "z": "b44e44406c8eebab",
+        "name": "",
+        "label": "Move",
+        "tooltip": "",
+        "group": "767738b45cde621a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 490,
+        "y": 520,
+        "wires": [
+            [
+                "01b63391bce7a3f9"
+            ]
+        ]
+    },
+    {
+        "id": "01b63391bce7a3f9",
+        "type": "function",
+        "z": "b44e44406c8eebab",
+        "name": "",
+        "func": "const msgInput = msg.payload; //input\n\nconst msgOutput = \n{ payload: \n    {\n    command:\"update_attribute\", // \"update_style\" means update CSS\n    selector:\"#OnOff\", // id's string\n    attributeName:\"x\",//  dịch theo phương x\n    attributeValue: msgInput    // parameter's new value\n    }\n};\n\nreturn msgOutput; //output",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 520,
+        "wires": [
+            [
+                "98d91dd3977103e9"
+            ]
+        ]
+    },
+    {
+        "id": "5486b3c7c0c1a221",
+        "type": "range",
+        "z": "b44e44406c8eebab",
+        "minin": "0",
+        "maxin": "100",
+        "minout": "0",
+        "maxout": "500",
+        "action": "clamp",
+        "round": false,
+        "property": "payload",
+        "name": "",
+        "x": 380,
+        "y": 280,
+        "wires": [
+            [
+                "a17af649f009fda5"
+            ]
+        ]
+    },
+    {
+        "id": "a17af649f009fda5",
+        "type": "function",
+        "z": "b44e44406c8eebab",
+        "name": "",
+        "func": "const msgInput = msg.payload; //input\n\nconst msgOutput = \n{ payload: \n    {\n    command:\"update_style\", // \"update_style\" means update CSS\n    selector:\"#tank2\", // id's string\n    attributeName:\"height\",// Width\n    attributeValue: msgInput    // parameter's new value\n    }\n};\n\nreturn msgOutput; //output",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 280,
+        "wires": [
+            [
+                "98d91dd3977103e9"
+            ]
+        ]
+    },
+    {
+        "id": "eb5ed09276ed9558",
+        "type": "ui_slider",
+        "z": "b44e44406c8eebab",
+        "name": "",
+        "label": "change high",
+        "tooltip": "",
+        "group": "767738b45cde621a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "5486b3c7c0c1a221"
+            ]
+        ]
+    },
+    {
+        "id": "767738b45cde621a",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "c671bb26702c12e9",
+        "order": 1,
+        "disp": true,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c671bb26702c12e9",
+        "type": "ui_tab",
+        "name": "Tan",
+        "icon": "dashboard",
+        "order": 6,
+        "disabled": false,
+        "hidden": false
+    }
+]
